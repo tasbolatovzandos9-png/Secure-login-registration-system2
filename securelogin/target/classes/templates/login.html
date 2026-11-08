@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="kk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Кіру</title>
+</head>
+<body>
+
+    <h2>Жүйеге кіру</h2>
+
+    <p th:if="${param.error}" style="color:red;">
+        Username немесе пароль қате!
+    </p>
+
+    <p th:if="${success}" th:text="${success}" style="color:green;"></p>
+
+    <form th:action="@{/login}" method="post">
+
+        <label>Username:</label>
+        <input type="text" name="username" required>
+
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" name="password" required>
+
+        <br><br>
+
+        <button type="submit">Кіру</button>
+
+    </form>
+
+    <p>Аккаунтың жоқ па? <a href="/register">Тіркелу</a></p>
+
+</body>
+</html>
+

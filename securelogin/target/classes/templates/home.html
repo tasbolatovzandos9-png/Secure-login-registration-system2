@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="kk" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Басты бет</title>
+</head>
+<body>
+
+    <h1>Қош келдіңіз!</h1>
+
+    <p>
+        Username:
+        <strong th:text="${username}"></strong>
+    </p>
+
+    <h3>Сіздің рөліңіз:</h3>
+
+    <ul>
+        <li th:each="authority : ${authorities}"
+            th:text="${authority}">
+        </li>
+    </ul>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Жүйеден шығу</button>
+    </form>
+
+</body>
+</html>
